@@ -12,6 +12,8 @@ export default function App() {
   const [total, setTotal] = useState(null);
   const [errorMessage, setErrorMessage] = useState('');
 
+  //JUST TO TEST THE GIT REPO
+
   useEffect(() => {
     capital && interes && months ? calculate() : reset();
   }, [capital, interes, months]);
