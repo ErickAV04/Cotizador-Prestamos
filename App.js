@@ -6,18 +6,20 @@ import ResultCalculation from './src/components/ResultCalculation';
 import colors from './src/utils/colors';
 
 export default function App() {
+  //States for all the variables that we are using through this application.
   const [capital, setCapital] = useState(null);
   const [interes, setInteres] = useState(null);
   const [months, setMonths] = useState(null);
   const [total, setTotal] = useState(null);
   const [errorMessage, setErrorMessage] = useState('');
 
-  //JUST TO TEST THE GIT REPO
-
+  //This hook is to check if the three inputs are filled with data to call the function
+  //to calculate the total amount, or just reset the error messages.
   useEffect(() => {
     capital && interes && months ? calculate() : reset();
   }, [capital, interes, months]);
 
+  //This function is to calculate the total amount that the user has to pay.
   const calculate = () => {
     reset();
     if (!capital || capital == 0) {
@@ -36,6 +38,7 @@ export default function App() {
     }
   };
 
+  //This is the function to reset all the error messages.
   const reset = () => {
     setErrorMessage('');
     setTotal(null);
@@ -43,6 +46,7 @@ export default function App() {
 
   return (
     <>
+      <StatusBar barStyle={'light-content'} />
       <SafeAreaView style={styles.safeArea}>
         <View style={styles.background} />
         <Text style={styles.titleApp}>Cotizador de Prestamos</Text>

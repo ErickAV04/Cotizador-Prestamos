@@ -27,6 +27,7 @@ export default function ResultCalculation({
   );
 }
 
+//Functional component to display the data of the calculation result into the screen and to make it reusable.
 const DataResult = ({ title, value }) => {
   return (
     <View style={styles.value}>
